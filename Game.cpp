@@ -52,11 +52,6 @@ void Game::iniciarTeclas()
             _teclasSoportadas[tecla] = valor_tecla;
         }
     }
-
-    // DEBUG TECLAS SOPORTADAS (ELIMINAR LUEGO)
-    //for (auto i : _teclasSoportadas) {
-    //    std::cout << i.first << " " << i.second << "\n";
-    //}
 }
 
 void Game::iniciarAudio()

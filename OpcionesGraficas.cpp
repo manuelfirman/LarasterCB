@@ -6,7 +6,7 @@ OpcionesGraficas::OpcionesGraficas()
 	_titulo = "default";
 	_resolucion = sf::VideoMode::getDesktopMode();
 	_modosVideo = sf::VideoMode::getFullscreenModes();
-	_fullscreen = false;
+	_fullscreen = true;
 	_sincVertical = false;
 	_opcionesContexto.antialiasingLevel = 0;
 	_limiteFramerate = 120;
