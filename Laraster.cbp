@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Laraster" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Laraster" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="SFML/include" />
+				</Compiler>
+				<Linker>
+					<Add directory="SFML/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Laraster" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="SFML/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add directory="SFML/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="SFML/include" />
+		</Compiler>
+		<Linker>
+			<Add library="sfml-system" />
+			<Add library="sfml-graphics" />
+			<Add library="sfml-window" />
+			<Add library="sfml-audio" />
+			<Add directory="SFML/lib" />
+		</Linker>
+		<Unit filename="Animacion.cpp" />
+		<Unit filename="Animacion.h" />
+		<Unit filename="Animacion2.cpp" />
+		<Unit filename="ArmaMelee.cpp" />
+		<Unit filename="ArmaMelee.h" />
+		<Unit filename="ArmaRango.cpp" />
+		<Unit filename="ArmaRango.h" />
+		<Unit filename="Armas.cpp" />
+		<Unit filename="Armas.h" />
+		<Unit filename="Atributos.cpp" />
+		<Unit filename="Atributos.h" />
+		<Unit filename="Audio.cpp" />
+		<Unit filename="Audio.h" />
+		<Unit filename="Bat.cpp" />
+		<Unit filename="Bat.h" />
+		<Unit filename="Demon.cpp" />
+		<Unit filename="Demon.h" />
+		<Unit filename="Editor_Mapa.cpp" />
+		<Unit filename="Editor_Mapa.h" />
+		<Unit filename="Editor_SpawnerEnemigos.cpp" />
+		<Unit filename="Editor_SpawnerEnemigos.h" />
+		<Unit filename="Enemigos.cpp" />
+		<Unit filename="Enemigos.h" />
+		<Unit filename="Entidades.cpp" />
+		<Unit filename="Entidades.h" />
+		<Unit filename="Espada.cpp" />
+		<Unit filename="Espada.h" />
+		<Unit filename="EstadoBase.cpp" />
+		<Unit filename="EstadoBase.h" />
+		<Unit filename="EstadoCargarPartida.cpp" />
+		<Unit filename="EstadoCargarPartida.h" />
+		<Unit filename="EstadoEditor.cpp" />
+		<Unit filename="EstadoEditor.h" />
+		<Unit filename="EstadoJuego.cpp" />
+		<Unit filename="EstadoJuego.h" />
+		<Unit filename="EstadoMenuPrincipal.cpp" />
+		<Unit filename="EstadoMenuPrincipal.h" />
+		<Unit filename="EstadoOpciones.cpp" />
+		<Unit filename="EstadoOpciones.h" />
+		<Unit filename="EstadoTutorial.cpp" />
+		<Unit filename="EstadoTutorial.h" />
+		<Unit filename="GUIJugador.cpp" />
+		<Unit filename="GUIJugador.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="Gui.cpp" />
+		<Unit filename="Gui.h" />
+		<Unit filename="Hitbox.cpp" />
+		<Unit filename="Hitbox.h" />
+		<Unit filename="IA.cpp" />
+		<Unit filename="IA.h" />
+		<Unit filename="Items.cpp" />
+		<Unit filename="Items.h" />
+		<Unit filename="Jugador.cpp" />
+		<Unit filename="Jugador.h" />
+		<Unit filename="Laraster.cbp" />
+		<Unit filename="ManagerEnemigos.cpp" />
+		<Unit filename="ManagerEnemigos.h" />
+		<Unit filename="MenuPausa.cpp" />
+		<Unit filename="MenuPausa.h" />
+		<Unit filename="Modo_Editor.cpp" />
+		<Unit filename="Modo_Editor.h" />
+		<Unit filename="Movimiento.cpp" />
+		<Unit filename="Movimiento.h" />
+		<Unit filename="OpcionesGraficas.cpp" />
+		<Unit filename="OpcionesGraficas.h" />
+		<Unit filename="Orbe.cpp" />
+		<Unit filename="Orbe.h" />
+		<Unit filename="Proyectil.cpp" />
+		<Unit filename="Proyectil.h" />
+		<Unit filename="Slime.cpp" />
+		<Unit filename="Slime.h" />
+		<Unit filename="Sonido.cpp" />
+		<Unit filename="Sonido.h" />
+		<Unit filename="SpawnerEnemigos.cpp" />
+		<Unit filename="SpawnerEnemigos.h" />
+		<Unit filename="TextoInfo.cpp" />
+		<Unit filename="TextoInfo.h" />
+		<Unit filename="Tile.cpp" />
+		<Unit filename="Tile.h" />
+		<Unit filename="TileMap.cpp" />
+		<Unit filename="TileMap.h" />
+		<Unit filename="TileNormal.cpp" />
+		<Unit filename="TileNormal.h" />
+		<Unit filename="frag_sombras.frag" />
+		<Unit filename="main.cpp" />
+		<Unit filename="stdafx.cpp" />
+		<Unit filename="stdafx.h" />
+		<Unit filename="text.slmp" />
+		<Unit filename="vert_sombras.vert" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
