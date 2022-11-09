@@ -9,7 +9,7 @@ void Demon::iniciarVariables()
 void Demon::iniciarIA()
 {
     // _inteligenciaArtificial->AgregarOpcion();
-    // 
+    //
 }
 
 void Demon::iniciarAnimaciones()
@@ -35,7 +35,7 @@ Demon::Demon(float x, float y, sf::Texture& textura, std::map<std::string, sf::S
     crearHitbox(_sprite, -38.f, 9.f, 28.f, 40.f);       // Hitbox
     crearComponenteMovimiento(80.f, 1700.f, 1000.f);    // Movimiento
     crearComponenteAnimacion(textura);                  // Animacion
-    crearComponenteAtributos(1);                        // Atributos
+    crearComponenteAtributos(100);                        // Atributos
     crearComponenteSonidos(sonidos, "DEMON");           // Sonidos
     setPosicion(x, y);                                  // Posicion
     this->iniciarAnimaciones();                         // Animaciones

@@ -34,7 +34,7 @@ Slime::Slime(float x, float y, sf::Texture& textura, std::map<std::string, sf::S
     crearHitbox(_sprite, -30.f, 0.f, 32.f, 32.f);        // Hitbox
     crearComponenteMovimiento(80.f, 1700.f, 1000.f);   // Movimiento
     crearComponenteAnimacion(textura);                  // Animacion
-    crearComponenteAtributos(1);                        // Atributos
+    crearComponenteAtributos(10);                        // Atributos
     crearComponenteSonidos(sonidos, "SLIME");                   // Sonidos
     setPosicion(x, y);                                  // Posicion
     this->iniciarAnimaciones();                         // Animaciones

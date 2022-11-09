@@ -184,7 +184,7 @@ void EstadoCargarPartida::actualizarGUI(const float& DT)
         _datosEstado->audio->playSonido("BOTON_CLICK");
         _datosEstado->audio->stopMusica();
         _estado->push(new EstadoJuego(_datosEstado));
-        _resetMusica = true;
+//        _resetMusica = true;
     }
 
 

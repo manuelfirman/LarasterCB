@@ -612,7 +612,7 @@
 	"EstadoJuego.h"
 	"EstadoMenuPrincipal.h"
 
-1668024740 c:\users\bezpa\desktop\laraster\estadojuego.h
+1668027150 c:\users\bezpa\desktop\laraster\estadojuego.h
 	"EstadoBase.h"
 	"EstadoOpciones.h"
 	"EstadoTutorial.h"
@@ -651,7 +651,7 @@
 	"Gui.h"
 	"Audio.h"
 
-1668023487 c:\users\bezpa\desktop\laraster\jugador.h
+1668029256 c:\users\bezpa\desktop\laraster\jugador.h
 	"Entidades.h"
 	"Espada.h"
 	"Orbe.h"
@@ -670,11 +670,11 @@
 
 1667953972 c:\users\bezpa\desktop\laraster\animacion.h
 
-1667432641 c:\users\bezpa\desktop\laraster\atributos.h
+1668031067 c:\users\bezpa\desktop\laraster\atributos.h
 
 1667432641 c:\users\bezpa\desktop\laraster\sonido.h
 
-1667432641 c:\users\bezpa\desktop\laraster\espada.h
+1668030553 c:\users\bezpa\desktop\laraster\espada.h
 	"ArmaMelee.h"
 	"Animacion.h"
 
@@ -711,11 +711,13 @@
 1667432641 c:\users\bezpa\desktop\laraster\tilenormal.h
 	"Tile.h"
 
-1667432641 c:\users\bezpa\desktop\laraster\managerenemigos.h
+1668032704 c:\users\bezpa\desktop\laraster\managerenemigos.h
 	"SpawnerEnemigos.h"
 	"Demon.h"
 	"Bat.h"
 	"Slime.h"
+	"snake.h"
+	"demonboss.h"
 
 1667432641 c:\users\bezpa\desktop\laraster\spawnerenemigos.h
 	"Tile.h"
@@ -724,7 +726,7 @@
 	"Enemigos.h"
 	"IA.h"
 
-1668007314 c:\users\bezpa\desktop\laraster\enemigos.h
+1668027350 c:\users\bezpa\desktop\laraster\enemigos.h
 	"Entidades.h"
 	"SpawnerEnemigos.h"
 	"Sonido.h"
@@ -807,7 +809,7 @@
 	"stdafx.h"
 	"Bat.h"
 
-1667432641 source:c:\users\bezpa\desktop\laraster\demon.cpp
+1668032524 source:c:\users\bezpa\desktop\laraster\demon.cpp
 	"stdafx.h"
 	"Demon.h"
 
@@ -819,11 +821,11 @@
 	"stdafx.h"
 	"Editor_SpawnerEnemigos.h"
 
-1668007297 source:c:\users\bezpa\desktop\laraster\enemigos.cpp
+1668027375 source:c:\users\bezpa\desktop\laraster\enemigos.cpp
 	"stdafx.h"
 	"Enemigos.h"
 
-1667432641 source:c:\users\bezpa\desktop\laraster\atributos.cpp
+1668031056 source:c:\users\bezpa\desktop\laraster\atributos.cpp
 	"stdafx.h"
 	"Atributos.h"
 
@@ -831,7 +833,7 @@
 	"stdafx.h"
 	"Entidades.h"
 
-1667432641 source:c:\users\bezpa\desktop\laraster\espada.cpp
+1668031066 source:c:\users\bezpa\desktop\laraster\espada.cpp
 	"stdafx.h"
 	"Espada.h"
 
@@ -839,19 +841,19 @@
 	"stdafx.h"
 	"EstadoBase.h"
 
-1668006956 source:c:\users\bezpa\desktop\laraster\estadocargarpartida.cpp
+1668034253 source:c:\users\bezpa\desktop\laraster\estadocargarpartida.cpp
 	"stdafx.h"
 	"EstadoCargarPartida.h"
 
-1668006970 source:c:\users\bezpa\desktop\laraster\estadoeditor.cpp
+1668029566 source:c:\users\bezpa\desktop\laraster\estadoeditor.cpp
 	"stdafx.h"
 	"EstadoEditor.h"
 
-1668024758 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
+1668034012 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
 	"stdafx.h"
 	"EstadoJuego.h"
 
-1668006984 source:c:\users\bezpa\desktop\laraster\estadomenuprincipal.cpp
+1668034238 source:c:\users\bezpa\desktop\laraster\estadomenuprincipal.cpp
 	"stdafx.h"
 	"EstadoMenuPrincipal.h"
 
@@ -887,11 +889,11 @@
 	"stdafx.h"
 	"Items.h"
 
-1668023487 source:c:\users\bezpa\desktop\laraster\jugador.cpp
+1668030675 source:c:\users\bezpa\desktop\laraster\jugador.cpp
 	"stdafx.h"
 	"Jugador.h"
 
-1668007144 source:c:\users\bezpa\desktop\laraster\managerenemigos.cpp
+1668032824 source:c:\users\bezpa\desktop\laraster\managerenemigos.cpp
 	"stdafx.h"
 	"ManagerEnemigos.h"
 
@@ -919,7 +921,7 @@
 	"stdafx.h"
 	"Proyectil.h"
 
-1668007190 source:c:\users\bezpa\desktop\laraster\slime.cpp
+1668032663 source:c:\users\bezpa\desktop\laraster\slime.cpp
 	"stdafx.h"
 	"Slime.h"
 
@@ -942,7 +944,7 @@
 	"stdafx.h"
 	"Tile.h"
 
-1668024518 source:c:\users\bezpa\desktop\laraster\tilemap.cpp
+1668034001 source:c:\users\bezpa\desktop\laraster\tilemap.cpp
 	"stdafx.h"
 	"TileMap.h"
 
@@ -1916,4 +1918,37 @@
 
 1668025504 source:c:\users\manuel\desktop\proyecto\larastercb\stdafx.cpp
 	"stdafx.h"
+
+1668032066 c:\users\bezpa\desktop\laraster\snake.h
+	"Enemigos.h"
+	"IA.h"
+
+1667432641 c:\users\bezpa\desktop\laraster\\entidades.h
+	"Hitbox.h"
+	"Movimiento.h"
+	"Animacion.h"
+	"Atributos.h"
+	"Sonido.h"
+
+1667432641 c:\users\bezpa\desktop\laraster\\hitbox.h
+
+1667432641 c:\users\bezpa\desktop\laraster\\movimiento.h
+
+1667953972 c:\users\bezpa\desktop\laraster\\animacion.h
+
+1668031067 c:\users\bezpa\desktop\laraster\\atributos.h
+
+1667432641 c:\users\bezpa\desktop\laraster\\sonido.h
+
+1668032628 source:c:\users\bezpa\desktop\laraster\snake.cpp
+	"stdafx.h"
+	"snake.h"
+
+1668032890 c:\users\bezpa\desktop\laraster\demonboss.h
+	"Enemigos.h"
+	"IA.h"
+
+1668033875 source:c:\users\bezpa\desktop\laraster\demonboss.cpp
+	"stdafx.h"
+	"demonboss.h"
 

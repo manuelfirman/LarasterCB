@@ -104,3 +104,8 @@ const Atributos* Enemigos::getAtributos() const
 		return nullptr;
 	}
 }
+
+const float Enemigos::getDistanciaSkill(const sf::Sprite& skill) const
+{
+    return static_cast<float>(sqrt(pow((getCentro().x - skill.getPosition().x), 2) + pow((getCentro().y - skill.getPosition().y), 2)));
+}

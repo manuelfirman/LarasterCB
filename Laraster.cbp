@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="SFML/include" />
+					<Add directory="./" />
 				</Compiler>
 				<Linker>
 					<Add directory="SFML/lib" />
@@ -27,6 +28,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="SFML/include" />
+					<Add directory="./" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -133,8 +135,12 @@
 		<Unit filename="TileMap.h" />
 		<Unit filename="TileNormal.cpp" />
 		<Unit filename="TileNormal.h" />
+		<Unit filename="demonboss.cpp" />
+		<Unit filename="demonboss.h" />
 		<Unit filename="frag_sombras.frag" />
 		<Unit filename="main.cpp" />
+		<Unit filename="snake.cpp" />
+		<Unit filename="snake.h" />
 		<Unit filename="stdafx.cpp" />
 		<Unit filename="stdafx.h" />
 		<Unit filename="text.slmp" />

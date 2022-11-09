@@ -5,8 +5,10 @@
 #include "Demon.h"
 #include "Bat.h"
 #include "Slime.h"
+#include "snake.h"
+#include "demonboss.h"
 
-enum tipo_enemigo { SLIME = 0, BAT, DEMON };
+enum tipo_enemigo { SLIME = 0, BAT, DEMON, SNAKE, BOSS };
 
 class ManagerEnemigos
 {

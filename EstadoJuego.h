@@ -98,7 +98,7 @@ public:
 
     void actualizarJugador(const float& DT);
     void actualizarEnemigos(const float& DT);
-    void actualizarAtaques(Enemigos* enemigo, const int indice, const bool basico, const float& DT);
+    void actualizarAtaques(Enemigos* enemigo, const int indice, const float& DT);
     void actualizarTileMap(const float& DT);
 
     void actualizar(const float& DT);

@@ -26,13 +26,15 @@ class Atributos
 		int _expSiguienteNivel;
 		int _puntosAtributo;
 
+		bool _subeLvl;
+
 
 	public:
 		// Metodos
 		Atributos();
 		Atributos(int nivel);
 		Atributos(int nivel, int experiencia, int hp, int vitalidad, int fuerza, int agilidad, int destreza, int inteligencia);
-		virtual ~Atributos(); 
+		virtual ~Atributos();
 
 		// setters
 		void setNivel(int nivel);
@@ -58,6 +60,7 @@ class Atributos
 		const int getDestreza();
 		const int getInteligencia();
 		const int getPuntosAtributo();
+		const bool getSubeLvl();
 
 
 		// setters game

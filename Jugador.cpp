@@ -39,17 +39,10 @@ Jugador::Jugador(float x, float y, sf::Texture& textura, std::map<std::string, s
     //crearComponenteSonidos();
 
     // key - Velocidad animacion - inicioX - inicioY - framesX - framesY
-    _animacion->agregarAnimacion("QUIETO", 10.f, 1, 10, 1, 10, 64, 64);         // Quieto
-    _animacion->agregarAnimacion("CAMINAR_ABAJO", 3.f, 1, 10, 8, 10, 64, 64);   // Caminar abajo
-    _animacion->agregarAnimacion("CAMINAR_ARRIBA", 3.f, 1, 8, 8, 8, 64, 64);    // Caminar arriba
-    _animacion->agregarAnimacion("CAMINAR_X", 3.f, 1, 9, 8, 9, 64, 64);         // Caminar derecha
-    //_animacion->agregarAnimacion("CAMINAR_X", 3.f, 1, 11, 8, 11, 64, 64);       // Caminar izquierda
-
-     // ANIMACIONES ATAQUE
-    _animacion->agregarAnimacion("ATAQUE_MAGICO", 5.f, 0, 5, 6, 5, 64, 64);
-    _animacion->agregarAnimacion("ATAQUE_ABAJO", 10.f, 1, 14, 5, 14, 64, 64);
-    _animacion->agregarAnimacion("ATAQUE_X", 10.f, 1, 13, 5, 13, 64, 64);
-
+    _animacion->agregarAnimacion("QUIETO", 30.f, 0, 2, 1, 2, 64, 64);         // Quieto
+    _animacion->agregarAnimacion("CAMINAR_ABAJO", 5.f, 1, 2, 8, 2, 64, 64);   // Caminar abajo
+    _animacion->agregarAnimacion("CAMINAR_ARRIBA", 3.f, 1, 0, 8, 0, 64, 64);    // Caminar arriba
+    _animacion->agregarAnimacion("CAMINAR_X", 5.f, 1, 1, 8, 1, 64, 64);         // Caminar derecha
 }
 
 Jugador::~Jugador()
@@ -73,19 +66,9 @@ const bool& Jugador::getIniciaAtaque()
     return _iniciaAtaque;
 }
 
-const bool& Jugador::getInicioTwist()
-{
-    return _iniciaTwist;
-}
-
 void Jugador::setInicioAtaque(const bool inicio_ataque)
 {
     _iniciaAtaque = inicio_ataque;
-}
-
-void Jugador::setInicioTwist(const bool inicio_twist)
-{
-    _iniciaTwist = inicio_twist;
 }
 
 void Jugador::ganarHP(const int hp)
@@ -108,12 +91,10 @@ void Jugador::perdeExperiencia(const int experiencia)
     _atributos->perderExperiencia(experiencia);
 }
 
-void Jugador::actualizarAtaque(const float& DT, sf::Vector2f posMouseVista)
+void Jugador::actualizarSkill(const float& DT, sf::Vector2f posMouseVista)
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-        _skill.push_back(Proyectil(_texturaSkill, 10.f, 2.f, 500.f, posMouseVista, getCentro()));
-        _tiraskill = true;
-    }
+    _skill.push_back(Proyectil(_texturaSkill, 10.f, 2.f, 500.f, posMouseVista, getCentro()));
+    _tiraskill = true;
 }
 
 
@@ -174,15 +155,12 @@ void Jugador::actualizar(const float& DT, sf::Vector2f& posMouseVista)
 
     _movimiento->actualizar(DT);
 
-    actualizarAtaque(DT, posMouseVista);
-
     actualizarAnimacion(DT, posMouseVista);
 
     _hitbox->actualizar();
 
     _atributos->actualizar();
 
-    _espada->animacionAtaque(posMouseVista, getCentro(), _iniciaTwist);
     _espada->actualizar(posMouseVista, getCentro());
 
     for (size_t i = 0; i < _skill.size(); i++)

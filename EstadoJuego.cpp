@@ -50,16 +50,22 @@ void EstadoJuego::iniciarKeybinds()
 
 void EstadoJuego::iniciarTexturas()
 {
-    if (!_texturas["PLANTILLA_JUGADOR"].loadFromFile("recursos/img/personaje/1.png")) {
+    if (!_texturas["PLANTILLA_JUGADOR"].loadFromFile("recursos/img/personaje/soldier.png")) {
         std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE JUGADOR" << std::endl;
     }
     if (!_texturas["DEMON"].loadFromFile("recursos/img/enemigos/demons/demon_rojo.png")) {
+        std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE ENEMIGO DEMON" << std::endl;
+    }
+    if (!_texturas["BOSS"].loadFromFile("recursos/img/enemigos/demons/demon_azul.png")) {
         std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE ENEMIGO DEMON" << std::endl;
     }
     if (!_texturas["BAT"].loadFromFile("recursos/img/enemigos/bat.png")) {
         std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE ENEMIGO BAT" << std::endl;
     }
     if (!_texturas["SLIME"].loadFromFile("recursos/img/enemigos/slime.png")) {
+        std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE ENEMIGO BAT" << std::endl;
+    }
+    if (!_texturas["SNAKE"].loadFromFile("recursos/img/enemigos/snake.png")) {
         std::cout << "ERROR::ESTADOJUEGO::NO SE PUDO CARGAR TEXTURA DE ENEMIGO BAT" << std::endl;
     }
 }
@@ -156,10 +162,7 @@ void EstadoJuego::iniciarTileMap()
 {
     //_tileMap = new TileMap(_datosEstado->tamanioCuadro, 32, 32, "recursos/img/mapa/terrenos/terreno_01.png");
 
-    // cargando mapa desde archivo
-    //_tileMap->cargarDesdeArchivo("text.slmp");
-
-    _tileMap = new TileMap("text.slmp");
+    _tileMap = new TileMap("mapa.slmp");
 }
 
 void EstadoJuego::iniciarPopUps()
@@ -333,13 +336,6 @@ void EstadoJuego::actualizarVistaCam(const float& DT)
      //Jugador centrado
     _vistaCam.setCenter(std::floor(_jugador->getPosicionSprite().x), std::floor(_jugador->getPosicionSprite().y)); // floor para estabilizar el float en pixels
 
-    // Jugador centrado + movimiento de mouse
-    /*_vistaCam.setCenter(
-        std::floor(_jugador->getPosicionSprite().x + (static_cast<float>(_posMouseVentana.x)) - (static_cast<float>(_datosEstado->opcionesGraficas->_resolucion.width / 2) / 10.f)),
-        std::floor(_jugador->getPosicionSprite().y + (static_cast<float>(_posMouseVentana.y)) - (static_cast<float>(_datosEstado->opcionesGraficas->_resolucion.height / 2) / 10.f)));*/ // floor para estabilizar el float en pixels
-
-        //std::cout << _tileMap->getTamanioMax().x << " " << _vistaCam.getSize().x << "\n";
-
     if (_vistaCam.getSize().x >= _tileMap->getTamanioMaxCuadros().x) {
 
         if (_vistaCam.getCenter().x - _vistaCam.getSize().x / 2.f < 0.f) {                    // Limite izquierdo
@@ -359,30 +355,6 @@ void EstadoJuego::actualizarVistaCam(const float& DT)
             _vistaCam.setCenter(_vistaCam.getCenter().x, 0.f + _vistaCam.getSize().y / 2.f);
         }
     }
-    //if (_tileMap->getTamanioMax().x >= _vistaCam.getSize().x)
-    //{
-    //    if (_vistaCam.getCenter().x - _vistaCam.getSize().x / 2.f < 0.f)
-    //    {
-    //        _vistaCam.setCenter(0.f + _vistaCam.getSize().x / 2.f, _vistaCam.getCenter().y);
-    //    }
-    //    else if (_vistaCam.getCenter().x + _vistaCam.getSize().x / 2.f > _tileMap->getTamanioMax().x)
-    //    {
-    //        _vistaCam.setCenter(_tileMap->getTamanioMax().x - _vistaCam.getSize().x / 2.f, _vistaCam.getCenter().y);
-    //    }
-    //}
-
-    //if (_tileMap->getTamanioMax().y >= _vistaCam.getSize().y)
-    //{
-    //    if (_vistaCam.getCenter().y - _vistaCam.getSize().y / 2.f < 0.f)
-    //    {
-    //        _vistaCam.setCenter(_vistaCam.getCenter().x, 0.f + _vistaCam.getSize().y / 2.f);
-    //    }
-    //    else if (_vistaCam.getCenter().y + _vistaCam.getSize().y / 2.f > _tileMap->getTamanioMax().y)
-    //    {
-    //        _vistaCam.setCenter(_vistaCam.getCenter().x, _tileMap->getTamanioMax().y - _vistaCam.getSize().y / 2.f);
-    //    }
-    //}
-
 
     _vistaPosicionCuadros.x = static_cast<int>(_vistaCam.getCenter().x) / static_cast<int>(_datosEstado->tamanioCuadro);
     _vistaPosicionCuadros.y = static_cast<int>(_vistaCam.getCenter().y) / static_cast<int>(_datosEstado->tamanioCuadro);
@@ -418,6 +390,9 @@ void EstadoJuego::actualizarInputJugador(const float& DT)
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("MOVER_ABAJO"))))
         _jugador->mover(0.f, 1.f, DT);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("SKILL"))) && getPpsTeclas())
+        _jugador->actualizarSkill(DT, _posMouseVista);
 
 }
 
@@ -501,6 +476,10 @@ void EstadoJuego::actualizarTileMap(const float& DT)
 
 void EstadoJuego::actualizarJugador(const float& DT)
 {
+    _jugador->actualizar(DT, _posMouseVista);
+
+    _GUIJugador->actualizar(DT);
+
     if(_jugador->getAtributos()->getHP() <= 0 && !_gameOver)
     {
         _jugador->getSonido().play("MORIR");
@@ -509,17 +488,10 @@ void EstadoJuego::actualizarJugador(const float& DT)
     }
 
     if(_jugador->getEnMovimiento() && getPpsTeclas()) _jugador->getSonido().playSonidoMov();
-
-    _jugador->actualizar(DT, _posMouseVista);
-
-    _GUIJugador->actualizar(DT);
 }
 
-void EstadoJuego::actualizarAtaques(Enemigos* enemigo, const int indice, const bool basico, const float& DT)
+void EstadoJuego::actualizarAtaques(Enemigos* enemigo, const int indice, const float& DT)
 {
-
-    if (basico)
-    {
         if (enemigo->getLimites().contains(_posMouseVista))                         // aim mouse
         {
             if (enemigo->getDistancia(*_jugador) < _jugador->getArma()->getRango()) // esta en rango?
@@ -539,26 +511,6 @@ void EstadoJuego::actualizarAtaques(Enemigos* enemigo, const int indice, const b
                 }
             }
         }
-    }
-    else
-    {
-        if (enemigo->getDistancia(*_jugador) < _jugador->getArma()->getRango() + 50.f) // esta en rango?
-        {
-            if (_jugador->getArma()->getTimerAtaque())                          // puede atacar?
-            {
-                if (enemigo->getDmgTerminado())
-                {
-                    int dmg = static_cast<int>(_jugador->getArma()->getDMG() + _jugador->getAtributos()->getDmg());
-                    enemigo->perderVida(dmg);
-                    enemigo->resetTimerDmg();
-                    _popUps->agregarPopUp(tipo_popUp::POP_NEGATIVO, enemigo->getCentro().x, enemigo->getCentro().y, "-", dmg, "hp");
-                    _jugador->getSonido().play("HIT");
-                    enemigo->getSonido().play("DMG");
-                }
-
-            }
-        }
-    }
 }
 
 void EstadoJuego::actualizarEnemigos(const float& DT)
@@ -566,11 +518,6 @@ void EstadoJuego::actualizarEnemigos(const float& DT)
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))      // input ataque
     {
         _jugador->setInicioAtaque(true); // inicia ataque
-    }
-
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
-    {
-        _jugador->setInicioTwist(true);
     }
 
 
@@ -589,12 +536,7 @@ void EstadoJuego::actualizarEnemigos(const float& DT)
 
         if (_jugador->getIniciaAtaque())
         {
-            actualizarAtaques(enemigo, indice, true, DT); // daño
-        }
-
-        if (_jugador->getInicioTwist())
-        {
-            actualizarAtaques(enemigo, indice, false, DT); // daño
+            actualizarAtaques(enemigo, indice, DT); // daño
         }
 
         if (_jugador->getDistancia(*enemigo) < enemigo->getRango())
@@ -624,7 +566,6 @@ void EstadoJuego::actualizarEnemigos(const float& DT)
     }
 
     _jugador->setInicioAtaque(false); // reset inicia ataque
-    _jugador->setInicioTwist(false); // reset inicia twist
 }
 
 
@@ -649,6 +590,8 @@ void EstadoJuego::actualizar(const float& DT)
         actualizarEnemigos(DT);
 
         _popUps->actualizar(DT);
+
+        if(_jugador->getAtributos()->getSubeLvl()) _jugador->getSonido().play("LEVELUP");
     }
     else // actualizar con pausa
     {

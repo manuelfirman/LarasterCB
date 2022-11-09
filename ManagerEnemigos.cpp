@@ -27,6 +27,14 @@ void ManagerEnemigos::crearEnemigo(const int tipo_enemigo, const int posX, const
 			_enemigos.push_back(new Slime(posX, posY, _texturas["SLIME"], _sonidos, tile_spawner, _jugador));
 			tile_spawner.contEnemigosMasMas(); // ++_contadorEnemigos;
 			break;
+		case tipo_enemigo::SNAKE:
+			_enemigos.push_back(new Snake(posX, posY, _texturas["SNAKE"], _sonidos, tile_spawner, _jugador));
+			tile_spawner.contEnemigosMasMas(); // ++_contadorEnemigos;
+			break;
+		case tipo_enemigo::BOSS:
+			_enemigos.push_back(new DemonBoss(posX, posY, _texturas["BOSS"], _sonidos, tile_spawner, _jugador));
+			tile_spawner.contEnemigosMasMas(); // ++_contadorEnemigos;
+			break;
 		default:
 			std::cout << "ERROR::MANAGERENEMIGOS::NO EXISTE ESE TIPO DE ENEMIGO" << std::endl;
 			break;

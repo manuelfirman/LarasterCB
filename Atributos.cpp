@@ -16,6 +16,7 @@ Atributos::Atributos()
 	_dmgMin = 0;
 	_defensa = 0;
 	_puntosAtributo = 0;
+	_subeLvl = false;
 }
 
 Atributos::Atributos(int nivel)
@@ -163,6 +164,10 @@ const int Atributos::getPuntosAtributo()
 	return _puntosAtributo;
 }
 
+const bool Atributos::getSubeLvl()
+{
+    return _subeLvl;
+}
 
 void Atributos::perderVida(const int hp)
 {
@@ -204,8 +209,8 @@ void Atributos::actualizarEstadisticas(const bool reset)
 	_dmgMin		= _fuerza * 2 + _fuerza / 4 + _inteligencia / 5; // TODO: agregar daño arma / agregar inteligencia (no es mala idea)
 	_dmgMax		= _fuerza * 2 + _fuerza / 2 + _inteligencia / 5; //TODO: agregar año arma
 	_defensa	= _agilidad * 2 + _agilidad / 4 + _fuerza / 5 + _inteligencia / 5;;
-	
-	
+
+
 	if (reset)
 	{
 		_hp = _hpMax;
@@ -222,8 +227,19 @@ void Atributos::actualizarNivel()
 		_experiencia = 0;
 		_expSiguienteNivel = static_cast<int>(std::pow(_nivel, 2)) + _nivel * 10 + _nivel * 2;
 		_puntosAtributo += 1;
+		_vitalidad += 1;
+		_fuerza += 1;
+		_inteligencia += 1;
+		_agilidad += 1;
+		_destreza += 1;
+
 		actualizarEstadisticas(true);
+		_subeLvl = true;
 	}
+	else
+    {
+        _subeLvl = false;
+    }
 }
 
 void Atributos::actualizar()

@@ -222,13 +222,13 @@ void EstadoEditor::actualizarBotonesMenuPausa()
     if (_menuPausa->getClick("CARGAR"))
     {
         _datosEstado->audio->playSonido("BOTON_CLICK");
-        _tileMap->cargarDesdeArchivo("text.slmp");
+        _tileMap->cargarDesdeArchivo("mapa.slmp");
     }
 
     if (_menuPausa->getClick("GUARDAR"))
     {
         _datosEstado->audio->playSonido("BOTON_CLICK");
-        _tileMap->guardarEnArchivo("text.slmp");
+        _tileMap->guardarEnArchivo("mapa.slmp");
     }
 
     if (_menuPausa->getClick("SALIR"))
