@@ -92,6 +92,8 @@
 		<Unit filename="GUIJugador.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="GameOver.cpp" />
+		<Unit filename="GameOver.h" />
 		<Unit filename="Gui.cpp" />
 		<Unit filename="Gui.h" />
 		<Unit filename="Hitbox.cpp" />

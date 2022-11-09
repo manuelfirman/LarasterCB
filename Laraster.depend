@@ -612,10 +612,11 @@
 	"EstadoJuego.h"
 	"EstadoMenuPrincipal.h"
 
-1667432641 c:\users\bezpa\desktop\laraster\estadojuego.h
+1668024740 c:\users\bezpa\desktop\laraster\estadojuego.h
 	"EstadoBase.h"
 	"EstadoOpciones.h"
 	"EstadoTutorial.h"
+	"GameOver.h"
 	"MenuPausa.h"
 	"Jugador.h"
 	"GUIJugador.h"
@@ -633,7 +634,7 @@
 
 1667432641 c:\users\bezpa\desktop\laraster\opcionesgraficas.h
 
-1667432641 c:\users\bezpa\desktop\laraster\audio.h
+1668023487 c:\users\bezpa\desktop\laraster\audio.h
 
 1667432641 c:\users\bezpa\desktop\laraster\estadoopciones.h
 	"EstadoBase.h"
@@ -650,7 +651,7 @@
 	"Gui.h"
 	"Audio.h"
 
-1667954017 c:\users\bezpa\desktop\laraster\jugador.h
+1668023487 c:\users\bezpa\desktop\laraster\jugador.h
 	"Entidades.h"
 	"Espada.h"
 	"Orbe.h"
@@ -846,7 +847,7 @@
 	"stdafx.h"
 	"EstadoEditor.h"
 
-1668018390 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
+1668024758 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
 	"stdafx.h"
 	"EstadoJuego.h"
 
@@ -886,7 +887,7 @@
 	"stdafx.h"
 	"Items.h"
 
-1668007136 source:c:\users\bezpa\desktop\laraster\jugador.cpp
+1668023487 source:c:\users\bezpa\desktop\laraster\jugador.cpp
 	"stdafx.h"
 	"Jugador.h"
 
@@ -941,11 +942,19 @@
 	"stdafx.h"
 	"Tile.h"
 
-1668007352 source:c:\users\bezpa\desktop\laraster\tilemap.cpp
+1668024518 source:c:\users\bezpa\desktop\laraster\tilemap.cpp
 	"stdafx.h"
 	"TileMap.h"
 
 1668007360 source:c:\users\bezpa\desktop\laraster\tilenormal.cpp
 	"stdafx.h"
 	"TileNormal.h"
+
+1668010994 c:\users\bezpa\desktop\laraster\gameover.h
+	"EstadoBase.h"
+	"Gui.h"
+
+1668023450 source:c:\users\bezpa\desktop\laraster\gameover.cpp
+	"stdafx.h"
+	"GameOver.h"
 

@@ -4,6 +4,7 @@
 #include "EstadoBase.h"
 #include "EstadoOpciones.h"
 #include "EstadoTutorial.h"
+#include "GameOver.h"
 #include "MenuPausa.h"
 
 #include "Jugador.h"
@@ -53,14 +54,14 @@ private: // Atributos
     Audio* _audio;
     std::map<std::string, sf::SoundBuffer> _bufferSonidosJ;
 
-    // 
-    bool _botonesPausa;
-    bool _resetVentana;
-
     // Timers sonido
     sf::Clock _timerSonidoEnemigos;
     sf::Clock _muerteEnemigo;
-    
+
+    bool _gameOver;
+    bool _botonesPausa;
+    bool _puedePausar;
+    bool _resetVentana;
 
 private: // Metodos
     void iniciarVariables();
@@ -87,7 +88,7 @@ public:
     const bool guardarPartida(const std::string ruta_slot);
     const bool cargarPartida(const std::string ruta_slot);
 
-
+    const bool puedePausar();
     const bool puedeSonar();
 
     void actualizarVistaCam(const float& DT);

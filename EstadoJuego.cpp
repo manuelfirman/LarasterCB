@@ -2,6 +2,7 @@
 #include "EstadoJuego.h"
 void EstadoJuego::iniciarVariables()
 {
+    _gameOver = false;
     _pausa = false;
     _botonesPausa = false;
     _timerSonidoEnemigos.restart();
@@ -500,6 +501,13 @@ void EstadoJuego::actualizarTileMap(const float& DT)
 
 void EstadoJuego::actualizarJugador(const float& DT)
 {
+    if(_jugador->getAtributos()->getHP() <= 0 && !_gameOver)
+    {
+        _jugador->getSonido().play("MORIR");
+        _estado->push(new GameOver(_datosEstado));
+        _gameOver = true;
+    }
+
     if(_jugador->getEnMovimiento() && getPpsTeclas()) _jugador->getSonido().playSonidoMov();
 
     _jugador->actualizar(DT, _posMouseVista);
@@ -612,7 +620,6 @@ void EstadoJuego::actualizarEnemigos(const float& DT)
             --indice;
         }
 
-
         ++indice;
     }
 
@@ -623,6 +630,8 @@ void EstadoJuego::actualizarEnemigos(const float& DT)
 
 void EstadoJuego::actualizar(const float& DT)
 {
+    if(_gameOver) finEstado();
+
     actualizarPosicionMouse(&_vistaCam);
     actualizarPpsTeclas(DT);
     actualizarInput(DT);
