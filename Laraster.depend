@@ -628,7 +628,7 @@
 	"Demon.h"
 	"TextoInfo.h"
 
-1667432641 c:\users\bezpa\desktop\laraster\estadobase.h
+1668036881 c:\users\bezpa\desktop\laraster\estadobase.h
 	"OpcionesGraficas.h"
 	"Audio.h"
 
@@ -744,7 +744,7 @@
 
 1667432641 c:\users\bezpa\desktop\laraster\textoinfo.h
 
-1667432641 c:\users\bezpa\desktop\laraster\estadomenuprincipal.h
+1668036881 c:\users\bezpa\desktop\laraster\estadomenuprincipal.h
 	"EstadoBase.h"
 	"EstadoJuego.h"
 	"EstadoEditor.h"
@@ -837,11 +837,11 @@
 	"stdafx.h"
 	"Espada.h"
 
-1668006947 source:c:\users\bezpa\desktop\laraster\estadobase.cpp
+1668036881 source:c:\users\bezpa\desktop\laraster\estadobase.cpp
 	"stdafx.h"
 	"EstadoBase.h"
 
-1668034253 source:c:\users\bezpa\desktop\laraster\estadocargarpartida.cpp
+1668036881 source:c:\users\bezpa\desktop\laraster\estadocargarpartida.cpp
 	"stdafx.h"
 	"EstadoCargarPartida.h"
 
@@ -849,11 +849,11 @@
 	"stdafx.h"
 	"EstadoEditor.h"
 
-1668034012 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
+1668036881 source:c:\users\bezpa\desktop\laraster\estadojuego.cpp
 	"stdafx.h"
 	"EstadoJuego.h"
 
-1668034238 source:c:\users\bezpa\desktop\laraster\estadomenuprincipal.cpp
+1668036881 source:c:\users\bezpa\desktop\laraster\estadomenuprincipal.cpp
 	"stdafx.h"
 	"EstadoMenuPrincipal.h"
 
